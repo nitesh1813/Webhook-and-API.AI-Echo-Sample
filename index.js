@@ -36,7 +36,7 @@ restService.post("/home", function(req, res) {
   return res.json({
     fulfillmentText:speech ,
     outputContexts: {
-     name:"Echo",
+     name:req.queryResult.intent.name,
      lifespanCount:4,
       parameters: {
         
