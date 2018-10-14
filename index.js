@@ -23,7 +23,8 @@ function echo_(req)
   return speech
 }
 restService.post("/home", function(req, res) {
- console.log(req);
+ console.log(req.body.intent);
+  console.log("---------------------------");
  var speech = ""
  switch (req.body.queryResult.action)
  {
