@@ -37,7 +37,7 @@ restService.post("/home", function(req, res) {
   return res.json({
     fulfillmentText:speech ,
     outputContexts: {
-     name:req.body.intent.name,
+     name:req.body.queryResult.intent.name,
      lifespanCount:4,
       parameters: {
         
