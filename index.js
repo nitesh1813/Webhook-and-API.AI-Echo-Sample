@@ -35,7 +35,7 @@ restService.post("/home", function(req, res) {
     
   return res.json({
     fulfillmentText:speech ,
-    followupEventInput: {
+    outputContexts: {
      
       parameters: {
         
