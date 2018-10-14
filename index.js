@@ -36,16 +36,16 @@ restService.post("/home", function(req, res) {
     
   return res.json({
     fulfillmentText:speech ,
-    outputContexts: {[
+    outputContexts: [
      name:req.body.session+"/contexts/Echo",
      lifespanCount:4,
-      parameters: {
+      parameters: [
         
-        documentName: "TestDocument"
+        documentName: "TestDocument"]
 ]
-}
 
-}
+
+
     
   });
 });
