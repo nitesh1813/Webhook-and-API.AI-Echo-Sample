@@ -12,9 +12,37 @@ restService.use(
 );
 
 restService.use(bodyParser.json());
+function echo_(req)
+{
+    var speech =
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.echoText
+      ? req.body.queryResult.parameters.echoText
+      : "Seems like some problem. Speak again.";
+  return speech
+}
+restService.post("/home", function(req, res) {
+ console.log(req);
+ var speech = ""
+ switch (req.body.queryResult.action)
+ {
+   case "echo":
+     speech = echo_(req);
+     break;
+     
+ }
+    
+  return res.json({
+    fulfillmentText:speech ,
+    
+    
+  });
+});
 
 restService.post("/echo", function(req, res) {
  console.log(req);
+
  var speech =
     req.body.queryResult &&
     req.body.queryResult.parameters &&
